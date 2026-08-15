@@ -1,0 +1,28 @@
+{
+  "rows":5759,
+  "labels":{
+    "baja_sospecha":2302,
+    "segura":1470,
+    "alto_riesgo":1220,
+    "revision_recomendada":767
+  },
+  "splits":{
+    "train":4032,
+    "validation":864,
+    "test":863
+  },
+  "sources":{
+    "real_benign":2552,
+    "synthetic_existing":1500,
+    "final_targeted_review_variant":650,
+    "synthetic_hard_suspicious":320,
+    "edr_benign_augmented":240,
+    "final_targeted_highrisk_variant":180,
+    "final_targeted_gray_variant":160,
+    "edr_malicious_augmented":120,
+    "project_benign_example":11,
+    "project_suspicious_example":11,
+    "edr_benign_real":10,
+    "edr_malicious_real":5
+  }
+}

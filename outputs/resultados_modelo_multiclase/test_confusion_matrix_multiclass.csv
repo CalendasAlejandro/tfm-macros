@@ -1,0 +1,5 @@
+;pred_segura;pred_baja_sospecha;pred_revision_recomendada;pred_alto_riesgo
+real_segura;219;0;1;0
+real_baja_sospecha;4;338;2;1
+real_revision_recomendada;0;0;115;0
+real_alto_riesgo;1;0;6;176

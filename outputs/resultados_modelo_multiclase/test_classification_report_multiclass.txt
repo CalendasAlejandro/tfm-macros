@@ -1,0 +1,10 @@
+                      precision    recall  f1-score   support
+
+              segura       0.98      1.00      0.99       220
+       baja_sospecha       1.00      0.98      0.99       345
+revision_recomendada       0.93      1.00      0.96       115
+         alto_riesgo       0.99      0.96      0.98       183
+
+            accuracy                           0.98       863
+           macro avg       0.97      0.98      0.98       863
+        weighted avg       0.98      0.98      0.98       863
