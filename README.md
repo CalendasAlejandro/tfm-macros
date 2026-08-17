@@ -1,10 +1,10 @@
 # Clasificación de macros sospechosas en documentos Office
 
 Proyecto de Trabajo Fin de Máster orientado a clasificar macros VBA de documentos
-ofimáticos mediante análisis estático y modelos clasicos de inteligencia
-artificial. La solucion permite analizar código VBA suelto o documentos Office,
-extraer sus macros, calcular senales de riesgo y devolver una clasificación
-multiclase util para un analista SOC.
+ofimáticos mediante análisis estático y modelos clásicos de inteligencia
+artificial. La solución permite analizar código VBA suelto o documentos Office,
+extraer sus macros, calcular señales de riesgo y devolver una clasificación
+multiclase útil para un analista SOC.
 
 ## Objetivo
 
@@ -18,15 +18,15 @@ sin ejecutar el código. El sistema clasifica cada muestra en cuatro niveles:
 3 = ALTO RIESGO
 ```
 
-Ademas de la clase predicha, la salida incluye probabilidades del modelo,
-senales principales, riesgo estático aproximado y recomendacion operativa.
+Además de la clase predicha, la salida incluye probabilidades del modelo,
+señales principales, riesgo estático aproximado y recomendacion operativa.
 
 ## Componentes principales
 
 ```text
 Documento Office o código VBA
-  -> extraccion de macros
-  -> extraccion de caracteristicas estáticas
+  -> extracción de macros
+  -> extracción de características estáticas
   -> modelo IA multiclase
   -> API JSON
   -> flujo n8n
@@ -58,7 +58,7 @@ outputs/requirements_modelo.txt
 
 ## Instalación en local
 
-Desde la raiz del repositorio:
+Desde la raíz del repositorio:
 
 ```powershell
 python -m venv .venv
@@ -121,7 +121,7 @@ test_confusion_matrix_multiclass.csv
 test_confusion_matrix_multiclass.png
 ```
 
-## análisis de una macro VBA
+## Análisis de una macro VBA
 
 Ejemplo con una macro de prueba:
 
@@ -140,7 +140,7 @@ La salida muestra:
 - nivel de riesgo predicho;
 - probabilidades por clase;
 - riesgo estático aproximado;
-- senales principales detectadas;
+- señales principales detectadas;
 - recomendacion operativa.
 
 ## API de análisis Office
@@ -159,7 +159,7 @@ Arranque en Ubuntu Server:
 python outputs/office_macro_analysis_api.py --host 0.0.0.0 --port 8092
 ```
 
-comprobación:
+Comprobación:
 
 ```bash
 curl http://127.0.0.1:8092/health
@@ -258,7 +258,6 @@ Header recomendado: Content-Type: application/json
 │   └── resultados_modelo_multiclase/
 ├── web_n8n_office_demo/
 │   ├── app.py
-├── real_macros/
 ├── README.md
 ```
 
@@ -281,21 +280,21 @@ entrenamiento sobre el dataset final.
 ## Limitaciones
 
 - El sistema realiza análisis estático, no ejecuta macros.
-- La clasificación representa una estimacion de riesgo, no una confirmacion
+- La clasificación representa una estimación de riesgo, no una confirmación
   definitiva de malware.
-- El dataset combina macros reales, ejemplos controlados y variantes sinteticas,
+- El dataset combina macros reales, ejemplos controlados y variantes sintéticas,
   por lo que puede contener sesgos.
-- Para uso real deberia complementarse con EDR, sandbox, reputacion de origen y
-  validacion por analistas.
+- Para uso real debería complementarse con EDR, sandbox, reputacion de origen y
+  validación por analistas.
 
 ## Uso esperado
 
 Este repositorio esta preparado para reproducir:
 
-1. la extraccion de caracteristicas estáticas;
+1. la extracción de características estáticas;
 2. el entrenamiento del modelo multiclase;
-3. la evaluación con metricas;
-4. la prediccion sobre macros VBA;
+3. la evaluación con métricas;
+4. la predicción sobre macros VBA;
 5. la API de análisis;
 6. la integración con n8n;
 7. la interfaz web orientada a analistas SOC.
