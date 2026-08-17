@@ -1,13 +1,3 @@
-"""
-Predice el nivel multiclase de riesgo de una macro VBA.
-
-Etiquetas:
-    0 = segura
-    1 = baja_sospecha
-    2 = revision_recomendada
-    3 = alto_riesgo
-"""
-
 from __future__ import annotations
 
 import argparse
