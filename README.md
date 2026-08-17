@@ -1,15 +1,15 @@
-# Clasificacion de macros sospechosas en documentos Office
+# Clasificación de macros sospechosas en documentos Office
 
-Proyecto de Trabajo Fin de Master orientado a clasificar macros VBA de documentos
-ofimaticos mediante analisis estatico y modelos clasicos de inteligencia
-artificial. La solucion permite analizar codigo VBA suelto o documentos Office,
-extraer sus macros, calcular senales de riesgo y devolver una clasificacion
+Proyecto de Trabajo Fin de Máster orientado a clasificar macros VBA de documentos
+ofimáticos mediante análisis estático y modelos clasicos de inteligencia
+artificial. La solucion permite analizar código VBA suelto o documentos Office,
+extraer sus macros, calcular senales de riesgo y devolver una clasificación
 multiclase util para un analista SOC.
 
 ## Objetivo
 
-El objetivo es apoyar la decision de seguridad ante documentos Office con macros,
-sin ejecutar el codigo. El sistema clasifica cada muestra en cuatro niveles:
+El objetivo es apoyar la decisión de seguridad ante documentos Office con macros,
+sin ejecutar el código. El sistema clasifica cada muestra en cuatro niveles:
 
 ```text
 0 = SEGURA
@@ -19,14 +19,14 @@ sin ejecutar el codigo. El sistema clasifica cada muestra en cuatro niveles:
 ```
 
 Ademas de la clase predicha, la salida incluye probabilidades del modelo,
-senales principales, riesgo estatico aproximado y recomendacion operativa.
+senales principales, riesgo estático aproximado y recomendacion operativa.
 
 ## Componentes principales
 
 ```text
-Documento Office o codigo VBA
+Documento Office o código VBA
   -> extraccion de macros
-  -> extraccion de caracteristicas estaticas
+  -> extraccion de caracteristicas estáticas
   -> modelo IA multiclase
   -> API JSON
   -> flujo n8n
@@ -50,13 +50,13 @@ Dependencias Python principales:
 - matplotlib
 - oletools
 
-Las dependencias estan definidas en:
+Las dependencias están definidas en:
 
 ```text
 outputs/requirements_modelo.txt
 ```
 
-## Instalacion en local
+## Instalación en local
 
 Desde la raiz del repositorio:
 
@@ -121,7 +121,7 @@ test_confusion_matrix_multiclass.csv
 test_confusion_matrix_multiclass.png
 ```
 
-## Analisis de una macro VBA
+## análisis de una macro VBA
 
 Ejemplo con una macro de prueba:
 
@@ -139,13 +139,13 @@ La salida muestra:
 
 - nivel de riesgo predicho;
 - probabilidades por clase;
-- riesgo estatico aproximado;
+- riesgo estático aproximado;
 - senales principales detectadas;
 - recomendacion operativa.
 
-## API de analisis Office
+## API de análisis Office
 
-La API permite analizar documentos Office o codigo VBA mediante peticiones HTTP.
+La API permite analizar documentos Office o código VBA mediante peticiones HTTP.
 
 Arranque local:
 
@@ -159,7 +159,7 @@ Arranque en Ubuntu Server:
 python outputs/office_macro_analysis_api.py --host 0.0.0.0 --port 8092
 ```
 
-Comprobacion:
+comprobación:
 
 ```bash
 curl http://127.0.0.1:8092/health
@@ -182,7 +182,7 @@ Ejemplo de cuerpo JSON:
 
 ## Interfaz web
 
-La interfaz web permite subir un documento Office o pegar codigo VBA. La web no
+La interfaz web permite subir un documento Office o pegar código VBA. La web no
 clasifica directamente: envia la muestra a n8n y n8n llama a la API del modelo.
 
 Arranque:
@@ -200,7 +200,7 @@ http://127.0.0.1:8093
 Si se quiere probar sin n8n, se puede arrancar la API y llamar directamente al
 endpoint `/analyze-office`.
 
-## Configuracion basica de n8n
+## configuración básica de n8n
 
 Flujo recomendado:
 
@@ -280,8 +280,8 @@ entrenamiento sobre el dataset final.
 
 ## Limitaciones
 
-- El sistema realiza analisis estatico, no ejecuta macros.
-- La clasificacion representa una estimacion de riesgo, no una confirmacion
+- El sistema realiza análisis estático, no ejecuta macros.
+- La clasificación representa una estimacion de riesgo, no una confirmacion
   definitiva de malware.
 - El dataset combina macros reales, ejemplos controlados y variantes sinteticas,
   por lo que puede contener sesgos.
@@ -292,10 +292,10 @@ entrenamiento sobre el dataset final.
 
 Este repositorio esta preparado para reproducir:
 
-1. la extraccion de caracteristicas estaticas;
+1. la extraccion de caracteristicas estáticas;
 2. el entrenamiento del modelo multiclase;
-3. la evaluacion con metricas;
+3. la evaluación con metricas;
 4. la prediccion sobre macros VBA;
-5. la API de analisis;
-6. la integracion con n8n;
+5. la API de análisis;
+6. la integración con n8n;
 7. la interfaz web orientada a analistas SOC.
