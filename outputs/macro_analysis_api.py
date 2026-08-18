@@ -1,22 +1,3 @@
-"""
-API HTTP local para analizar macros VBA con el modelo multiclase.
-
-Pensada para integracion con n8n mediante el nodo HTTP Request.
-
-Uso:
-    python outputs/macro_analysis_api.py --host 0.0.0.0 --port 8091
-
-Endpoints:
-    GET  /health
-    POST /analyze
-
-Body /analyze:
-    {
-      "file_name": "macro.vba",
-      "macro_text": "Sub Auto_Open()..."
-    }
-"""
-
 from __future__ import annotations
 
 import argparse
